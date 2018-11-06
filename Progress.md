@@ -8,9 +8,9 @@
   * Frameworks (Discover all associated libraries/frameworks and select a few to learn)
 
 ##### Day 1
-  [] Syntax
-  [] Variables
-  [] Arrays
+  - [] Syntax
+  - [] Variables
+  - [] Arrays
 
 ### Week 2 (2019/11/12 - 2019/11/18)
   
