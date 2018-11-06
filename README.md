@@ -1,3 +1,3 @@
 # PHP-Playground
 
-PHP Playground for personal development/learning
+Personal development/learning for PHP
