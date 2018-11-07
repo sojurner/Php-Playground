@@ -23,6 +23,9 @@
 
 ##### Day 3 2018/11/07
 
+- Form Data (accessing form values)
+- Built in array, string php prototypes
+
 ##### Day 4 2018/11/08
 
 ##### Day 5 2018/11/09
@@ -31,4 +34,4 @@
 
 ##### Day 7 2018/11/11
 
-### Week 2 (2019/11/12 - 2019/11/18)
+### Week 2
