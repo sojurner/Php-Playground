@@ -23,7 +23,12 @@
 
 ##### Day 3 (2018/11/07)
 
+- Form Data (accessing form values)
+- Built in array, string php prototypes
+
 ##### Day 4 (2018/11/08)
+
+- Outsourcing Data
 
 ##### Day 5 (2018/11/09)
 
