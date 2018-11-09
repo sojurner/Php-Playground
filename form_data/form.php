@@ -2,7 +2,7 @@
 
 
   if(isset($_POST['submit'])){
-
+    $name = array('paul', 'ben', 'mike');
     $minimum = 5;
     $maximum = 10;
 
@@ -10,16 +10,21 @@
     $password = $_POST['password'];
 
 
-    if(strlen($username) < $minimum){
-      echo "Username has to be longer than five";
+    if(strlen($password) < $minimum){
+      echo "password has to be longer than five";
     } 
-    if(strlen($username) > $maximum){
-      echo "Username cannot be longer than ten";
+    if(strlen($password) > $maximum){
+      echo "password cannot be longer than ten";
     }
   }
 
-  ?>
+  if(!in_array($username,$name)){
+    echo 'sory no login';
+  } else {
+    echo 'welcome';
+  }
 
+?>
 
 <!DOCTYPE html>
 <html lang='en'>
@@ -33,11 +38,19 @@
 
 <form action="form.php" method="post">
 
-<input type="text" name="username" placeholder="enter username"/>
-<input type="password" name="password" placeholder="enter password"/>
-<input type="submit" placeholder="submit" name="submit"/>
+    <input type="username" name="username" placeholder="username">
+    <input type="password" name="password" placeholder="password">
+    <button type="submit" name="submit">submit</button>
 
 </form>
+
+<!-- <form action="form.php" method="post">
+
+<input type="text" name="username" placeholder="enter username"/>
+<input type="password" name="password" placeholder="enter password"/>
+<input type="submit" placeholder="submit" name="submit"/> -->
+
+<!-- </form> -->
 
 
 </body>
