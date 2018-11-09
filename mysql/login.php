@@ -15,15 +15,10 @@ if(isset($_POST['submit'])){
     echo $username . "<br>";
     echo $password;
 
- 
-
   } else {
     echo "missing one or more fields";
   }
-
-
 }
-
 ?>
 
 
