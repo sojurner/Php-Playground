@@ -10,7 +10,7 @@ if(isset($_POST['submit'])){
   } else {
     die("Connection failed");
   }
-  $query = "INSERT INTO users(username, password) ";
+  $query = "INSERT INTO users(username, password) ";  //concatenating strings
   $query .= "VALUES ('$username', '$password')";
 
   $result = mysqli_query($connection, $query);
