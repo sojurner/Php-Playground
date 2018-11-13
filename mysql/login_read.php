@@ -1,21 +1,16 @@
-<?php 
+<?php include "db.php"; //connecting to database loginapp
 
-  $connection = mysqli_connect('localhost', 'root', 'root', 'loginapp');
-
-  if($connection){
-    echo "connected";
-  } else {
-    die("Connection failed");
+  if($connection){ // if connection is successful
+    echo "connected"; //echo connected
+  } else { // if connection is unsuccessful
+    die("Connection failed"); //output the message and terminate script
   }
-  $query = "SELECT * FROM users";  //concatenating strings
+  $query = "SELECT * FROM users";  // query gather all users from table
+  $result = mysqli_query($connection, $query); // passing connection and query to my query method
 
-
-  $result = mysqli_query($connection, $query);
-
-  if(!$result){
-    die('Query Failed' . mysqli_error());
+  if(!$result){ // if no response
+    die('Query Failed' . mysqli_error()); // output the message and terminate script, throw error
   }
-
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +20,7 @@
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-<title>Static Composition 3</title>
+<title>login read</title>
 </head>
 <body>
 
@@ -34,21 +29,20 @@
 
   <?php 
   
-  while($row = mysqli_fetch_assoc($result)){
-
-    ?>
+  while($row = mysqli_fetch_assoc($result)){ //while a row exists in the associative array
+  
+  ?>
 
     <pre>
-    <?php 
-    
-    print_r($row);
-    
-    ?>
-    </pre>
-  <?php 
 
+  <?php 
+    print_r($row); // printing row 
+  ?>
+
+    </pre>
+
+  <?php 
   }
-  
   ?>
 
   </div>
