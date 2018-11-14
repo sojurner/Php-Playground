@@ -13,6 +13,15 @@ if($connection){
   die("Connection failed");
 }
 
+if($username && $password){
+  echo $username . "<br>";
+  echo $password;
+
+} else {
+  echo "missing one or more fields";
+}
+}
+
 function showAllData() {
   global $connection; //ensure connection is global since connections is within the functions scope
 $query = "SELECT * FROM users";  //concatenating strings
@@ -21,7 +30,6 @@ $result = mysqli_query($connection, $query);
 if(!$result){
   die('Query Failed' . mysqli_error());
 }
-
 
 while($row = mysqli_fetch_assoc($result)){
   $id = $row['id'];
