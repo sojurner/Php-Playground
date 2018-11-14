@@ -1,23 +1,8 @@
+<?php include "db.php"?>
+<?php include "functions.php"?>
 <?php 
-
 if(isset($_POST['submit'])){
-  $username = $_POST['username'];
-  $password = $_POST['password'];
-  $connection = mysqli_connect('localhost', 'root', 'root', 'loginapp');
-
-  if($connection){
-    echo "connected";
-  } else {
-    die("Connection failed");
-  }
-
-  if($username && $password){
-    echo $username . "<br>";
-    echo $password;
-
-  } else {
-    echo "missing one or more fields";
-  }
+  Login();
 }
 ?>
 
@@ -37,6 +22,8 @@ if(isset($_POST['submit'])){
 
 <div class="container">
   <div class="col-xs-6">
+  <h2 class="text-center">Login</h2>
+
   <form action="login.php" method="post">
 <div class="form-group">
 <label for="username">UserName</label>
