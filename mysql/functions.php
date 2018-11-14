@@ -63,5 +63,33 @@ $password = crypt($password, $hashF_and_salt);
   }
 }
 
+function UpdateTable() {
+global $connection; //ensure connection is global since connections is within the functions scope
 
+  $username = $_POST['username']; // linking the input values of username
+  $password = $_POST['password']; // linking the input values of password
+  $id = $_POST['id']; // linking the input values of id
+  $query = 'UPDATE users SET '; // SPACE IS VERY IMPORTANT AFTER SET
+  $query .= "username = '$username', ";  // SPACE IS VERY IMPORTANT
+  $query .= "password = '$password' "; 
+  $query .= "WHERE id = $id ";
+  $result = mysqli_query($connection, $query);
+  
+  if(!$result){
+    die("query Failed" . mysqli_error($connection));
+  }
+}
 
+function DeleteRows() {
+global $connection; //ensure connection is global since connections is within the functions scope
+
+  $id = $_POST['id']; // linking the input values of id
+  $query = "DELETE FROM USERS "; // SPACE IS VERY IMPORTANT AFTER SET
+  $query .= "WHERE id = $id ";
+  $result = mysqli_query($connection, $query);
+
+  if(!$result){
+    die("query Failed" . mysqli_error($connection));
+  }
+}
+?>
