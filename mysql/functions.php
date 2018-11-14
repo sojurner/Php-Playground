@@ -23,19 +23,19 @@ if($username && $password){
 }
 
 function showAllData() {
-  global $connection; //ensure connection is global since connections is within the functions scope
+global $connection; //ensure connection is global since connections is within the functions scope
 $query = "SELECT * FROM users";  //concatenating strings
 $result = mysqli_query($connection, $query);
 
-if(!$result){
-  die('Query Failed' . mysqli_error());
-}
+  if(!$result){
+    die('Query Failed' . mysqli_error());
+  }
 
-while($row = mysqli_fetch_assoc($result)){
-  $id = $row['id'];
-  $name = $row['username'];
-echo "<option value='$id'>$name</option>";
-}
+  while($row = mysqli_fetch_assoc($result)){
+    $id = $row['id'];
+    $name = $row['username'];
+      echo "<option value='$id'>$name</option>";
+  }
 }
 
 function CreateUser(){
@@ -95,7 +95,7 @@ global $connection; //ensure connection is global since connections is within th
   $query = "DELETE FROM USERS "; // SPACE IS VERY IMPORTANT AFTER SET
   $query .= "WHERE id = $id ";
   $result = mysqli_query($connection, $query);
-
+  
   if(!$result){
     die("query Failed" . mysqli_error($connection));
   }
