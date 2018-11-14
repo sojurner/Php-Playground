@@ -2,34 +2,16 @@
 <?php include "functions.php";?>
 <?php  
 if(isset($_POST['submit'])){
-  $username = $_POST['username']; // linking the input values of username
-  $password = $_POST['password']; // linking the input values of password
-  $id = $_POST['id']; // linking the input values of id
-  $query = 'UPDATE users SET ';
-  $query .= "username = '$username', ";
-  $query .= "password = '$password' ";
-  $query .= "WHERE id = $id ";
-
-  $result = mysqli_query($connection, $query);
-  if(!$result){
-
-    die("query Failed" );
-  }
+  UpdateTable();
 }
 ?>
-<!DOCTYPE html>
-<html lang='en'>
-<head>
-<meta name='viewport' content='width=device-width, initial-scale=1.0'>
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-<title>login update</title>
-</head>
-<body>
+<?php include "includes/header.php" ?>
 
 <div class="container">
   <div class="col-sm-6">
+  <h2 class="text-center">Update</h2>
+
   <form action="" method="post">
   <div class="form-group">
     <label for="username">UserName</label>
@@ -52,3 +34,5 @@ if(isset($_POST['submit'])){
 
 </body>
 </html>
+
+<?php include "includes/footer.php" ?>
