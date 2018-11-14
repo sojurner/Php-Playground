@@ -13,16 +13,7 @@
   }
 ?>
 
-<!DOCTYPE html>
-<html lang='en'>
-<head>
-<meta name='viewport' content='width=device-width, initial-scale=1.0'>
-
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-<title>login read</title>
-</head>
-<body>
+<?php include "includes/header.php" ?>
 
 <div class="container">
   <div class="col-sm-6">
@@ -31,23 +22,20 @@
   
   while($row = mysqli_fetch_assoc($result)){ //while a row exists in the associative array
   
-  ?>
+    ?>
 
-    <pre>
+      <pre>
 
-  <?php 
-    print_r($row); // printing row 
-  ?>
+        <?php 
+          print_r($row); // printing row 
+        ?>
 
-    </pre>
+      </pre>
 
-  <?php 
+    <?php 
   }
-  ?>
+    ?>
 
   </div>
 </div>
-
-
-</body>
-</html>
+<?php include "includes/footer.php" ?>
