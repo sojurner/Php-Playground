@@ -1,43 +1,19 @@
-<?php 
+<?php include "db.php"?>
+<?php include "functions.php"?>
 
+<?php
 if(isset($_POST['submit'])){
-  $username = $_POST['username'];
-  $password = $_POST['password'];
-  $connection = mysqli_connect('localhost', 'root', 'root', 'loginapp');
-
-  if($connection){
-    echo "connected";
-  } else {
-    die("Connection failed");
-  }
-  $query = "INSERT INTO users(username, password) ";  //concatenating strings
-  $query .= "VALUES ('$username', '$password')";
-
-  $result = mysqli_query($connection, $query);
-
-  if(!$result){
-    die('Query Failed' . mysqli_error());
-  } else {
-    echo 'user added';
-  }
+  CreateUser();
 }
 ?>
 
-<!DOCTYPE html>
-<html lang='en'>
-<head>
-<meta name='viewport' content='width=device-width, initial-scale=1.0'>
-<link rel='stylesheet' href='normalize.css'>
-<link rel='stylesheet' type='text/css' href='style.css'>
+<?php include "includes/header.php" ?>
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-<title>Static Composition 3</title>
-</head>
-<body>
 
 <div class="container">
-  <div class="col-xs-6">
+  <div class="col-sm-6">
+  <h2 class="text-center">Create</h2>
+
   <form action="login_create.php" method="post">
 <div class="form-group">
 <label for="username">UserName</label>
@@ -52,8 +28,4 @@ if(isset($_POST['submit'])){
 
   </form>
   </div>
-</div>
-
-
-</body>
-</html>
+<?php include "includes/footer.php" ?>
