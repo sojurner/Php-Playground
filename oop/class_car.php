@@ -12,6 +12,7 @@ class Car {
     $action = 'move wheels';
     clog($action);
     echo "$action" . ': 100 rps';
+    $this->wheels = 10;
     return "rotating wheels...";
   }
 
@@ -35,8 +36,10 @@ $mazda = new Car();
 
 $action = $mazda->rotateWheels();
 $color = $mazda->color;
+$wheels = $mazda->wheels;
 clog("hood: $action");
-clog("color: $color")
+clog("color: $color");
+clog("wheels: $wheels")
 // clog($mazda->$engine);
 // clog($mazda->$doors);
 
