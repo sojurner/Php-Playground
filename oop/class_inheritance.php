@@ -1,7 +1,6 @@
 <?php include "../debug/mock_console.php";
 
 class Car {
-
   var $wheels = 4;
   var $hood = 1;
   var $engine = 1;
@@ -9,11 +8,13 @@ class Car {
   var $color = 'green';
 
   function rotateWheels(){
+
     $action = 'move wheels';
     clog($action);
     echo "$action" . ': 100 rps';
     $this->wheels = 10;
     return "rotating wheels...";
+
   }
 
 
@@ -31,20 +32,15 @@ class Car {
 //   echo "Class does not exist";
 // }
 
-$mazda = new Car();
+class Plane extends Car{
 
+}
 
-$action = $mazda->rotateWheels();
-$color = $mazda->color;
-$wheels = $mazda->wheels;
-clog("hood: $action");
-clog("color: $color");
-clog("wheels: $wheels")
-// clog($mazda->$engine);
-// clog($mazda->$doors);
-
-// clog($mazda->wheels);
+$jet = new Plane();
+clog($jet->color);
+// if(class_exists("Plane")){
+//   echo 'exists plane';
+// }
 
 ?>
-
 
