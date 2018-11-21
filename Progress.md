@@ -51,10 +51,13 @@
 ###### Day 8 (2018/11/18)
 
 - OOP
-- class(constructor, var, function)
-- static, private, public
+- Class(constructor, var, function)
+- Static, Private, Public
 
 ###### Day 9 (2018/11/19)
+
+- File management (CRUD)
+- Configuring Root Directory
 
 ###### Day 10 (2018/11/20)
 
